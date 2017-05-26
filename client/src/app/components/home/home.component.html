@@ -1,1 +1,39 @@
+<!--<h1>Hello {{name}}</h1>-->
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        
+                        <a class="navbar-brand" routerLink="/">Logger</a>
+                    </div>
 
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                         <ul class="nav navbar-nav main-nav  clear navbar-right ">
+                            <li><a class="navactive color_animation"  routerLink="/">WELCOME</a></li>
+                            <li *ngIf="!valid"><a  class="color_animation" routerLink="/signup">SignUp</a></li>
+                            <li *ngIf="!valid"><a  class="color_animation" routerLink="/signin">SignIn</a></li>
+                           
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+<!--<header class="hero"> -->
+	<!--	<div class="carousel js-flickity"> -->
+			<div id="top"  class="starter_container bg">
+			  	<div class="follow_container"> 
+                <div class="col-md-6 col-md-offset-3">
+                    <h2 class="top-title">Log Me</h2>
+                    <h2 class="white second-title">Keep a log of your activities with one button click.</h2>
+                    <hr>
+					<span><a routerLink="/events" class="btn btn-danger" style=" text-decoration: none;">Start Tracking</a></span>
+                    <span><a routerLink="/learnmore" class="btn btn-danger" style=" text-decoration: none;">Learn more</a></span>
+                </div>
+            </div> 
+			</div>
+			
+   <!--       </div> -->
+
+<!--	</header>  -->
