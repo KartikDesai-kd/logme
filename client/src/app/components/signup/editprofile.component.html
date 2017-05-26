@@ -4,15 +4,22 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         
-                        <a class="navbar-brand" routerLink="/">Logger</a>
+                        <a class="navbar-brand" routerLink="/">Loggers</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav  clear navbar-right ">
-                             <li><a class=" color_animation"  routerLink="/">WELCOME</a></li>
-                            <li><a  class=" navactive color_animation" routerLink="/signup">SignUp</a></li>
-                            <li><a  class="  color_animation" routerLink="/signin">SignIn</a></li>
+                            <li><a class="navactive color_animation" href="#top">WELCOME</a></li>
+                           <li class="dropdown">
+                                <a class="dropdown-toggle color_animation" data-toggle="dropdown" href="#">{{firstname}} {{lastname}}
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a routerLink="/editprofile">Edit Profile</a></li>
+                                    <li><a routerLink="/editpassword">Change Password</a></li>
+                                    <li><a href="/">Sign Out</a></li>  
+                                </ul>
+                            </li>
                             
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -21,15 +28,14 @@
         </nav>
 <div class="follow_container2"> 
  <div class="container col-md-4 col-md-offset-4">
-  <h2 style="text-align:center">Signup</h2>
+  <h2 style="text-align:center">Edit Profile</h2>
   <hr/>
-  <form class="form-horizontal" [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)" (submit)="addTask($event)">
+  <form class="form-horizontal" [formGroup]="complexForm">
     <div class="row col-xs-8" [ngClass]="{'has-error':!complexForm.controls['firstname'].valid && complexForm.controls['firstname'].touched}">
       <label for="firstname">Firstname:</label>
       <input type="text" class="form-control  input-lg" id="firstname" placeholder="Enter firstname" [(ngModel)]="firstname" name="firstname" [formControl]="complexForm.controls['firstname']">
       <!-- The hasError method will tell us if a particular error exists -->
         <div *ngIf="complexForm.controls['firstname'].hasError('required') && complexForm.controls['firstname'].touched" class="alert alert-danger">You must include a first name.</div>
-  <br>
     </div> 
     <div class="form-group col-xs-8" [ngClass]="{'has-error':!complexForm.controls['lastname'].valid && complexForm.controls['lastname'].touched}">
       <label for="lastname">Lastname:</label>
@@ -60,8 +66,7 @@
         <div *ngIf="complexForm.controls['password'].hasError('maxlength') && complexForm.controls['password'].touched" class="alert alert-danger">Your Password cannot exceed 10 characters.</div>
     </div>
     <div class="form-group col-xs-8">
-    <button type="submit" class="btn btn-danger" [disabled]="!complexForm.valid">Signup</button> or <span><a routerLink="/signin">Sign In</a></span>
-     <span *ngIf="valid" style="color:red;"><br><br>Username you entered already exist.</span>
+    <button type="button" (click)="editUser()" class="btn btn-danger" [disabled]="!complexForm.valid">Edit</button>
     </div>
   </form>
 </div>
