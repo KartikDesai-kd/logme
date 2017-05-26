@@ -1,0 +1,8 @@
+{
+  "name": "log me",
+  "description": "An application that performs validations, CRUD, signup and login through MEAN stack and angular2",
+  "repository": "https://github.com/KartikDesai-kd/logme.",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
