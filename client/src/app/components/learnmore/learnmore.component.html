@@ -1,1 +1,47 @@
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        
+                        <a class="navbar-brand" routerLink="/">Logger</a>
+                    </div>
 
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav main-nav  clear navbar-right ">
+                            <li><a class="navactive color_animation" href="#top">WELCOME</a></li>
+                            <li *ngIf="!valid"><a class="color_animation" routerLink="/signup">SignUp</a></li>
+                            <li *ngIf="!valid"><a class="color_animation" routerLink="/signin">SignIn</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+<div class="follow_container2"> 
+
+ <div class="container text-center">
+ 
+ <p>  How many times have you been working out?</p>
+<p>When did you take your last medication?</p>
+
+<p>So many things going on in your life that you might want to keep tabs on.</p>
+
+<p>But the hassle in making a note of every activity is just too much.</p>
+
+<p>trakit.me addresses the problem by allowing you to track any activity with one single click of a button.</p>
+
+<p>You create a list of activities you want to track.</p>
+
+<p>When it happens, you open trakit.me on your phone or computer and just hit the log button against that activity.</p>
+<p>The activity and the day and time it happened is logged.</p>
+
+<p>The idea is to make it as simple and fast as possible to log it.</p>
+
+<p>Later, you can view your logs whenever you want to. It will always be there.</p><br>
+<span><a routerLink="/events" style="text-decoration:none;" class="btn btn-danger btn-lg">Start Tracking</a></span>
+
+ 
+</div>
+     
+</div>	
