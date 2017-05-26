@@ -11,6 +11,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav  clear navbar-right ">
                             <li><a class="navactive color_animation" href="#top">WELCOME</a></li>
+                           
                             <li class="dropdown">
                                 <a class="dropdown-toggle color_animation" data-toggle="dropdown" href="#">{{firstname}} {{lastname}}
                                 <span class="caret"></span></a>
@@ -26,9 +27,8 @@
             </div><!-- /.container-fluid -->
         </nav>
 <div class="follow_container2"> 
-    <div class="container">
-    
-           <div class="well row">
+<div class="container">
+     <div class="well row">
         <div class="col-xs-5 text-left">
        <a routerLink="/events" [queryParams]="{ valid:true}" class="btn btn-success btn-lg" style="text-decoration:none;"><i class="fa fa-arrow-left" aria-hidden="true">Back</i></a>
     </div>
@@ -41,12 +41,12 @@
          </div>
           
             <hr/>
-            <div class="text-right">
-               <input type="button" (click)="editTask()" value="Edit" class="btn btn-danger btn-lg">
-
-               <input type="button" (click)="deleteTask()" value="Delete" class="btn btn-danger btn-lg">    
-            </div>
+            
+           <div class="alert alert-info text-center">
+          <h3>  done {{loggedin}} times. </h3>
+          </div>   
+            
 
  </div>    
 
-</div>
+</div>	
