@@ -1,1 +1,70 @@
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        
+                        <a class="navbar-brand" href="#">Logger</a>
+                    </div>
 
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav main-nav  clear navbar-right ">
+                            <li><a class="navactive color_animation" href="#top">WELCOME</a></li>
+                            <li *ngIf="!valid"><a class="color_animation" routerLink="/signup">SignUp</a></li>
+                            <li *ngIf="!valid"><a class="color_animation" routerLink="/signin">SignIn</a></li>
+                            <li class="dropdown" *ngIf="valid">
+                                <a class="dropdown-toggle color_animation" data-toggle="dropdown" href="#">{{firstname}} {{lastname}}
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu list-group">
+                                    <li><a routerLink="/editprofile"><h3>Edit Profile</h3></a></li>
+                                    <li><a routerLink="/editpassword"><h3>Change Password</h3></a></li>
+                                    <li><a href="/"><h3>SignOut</h3></a></li>  
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+<div class="follow_container1"> 
+<div class="container">
+        <div class="well row" *ngIf="valid">
+        <div class="col-xs-8 text-left">
+        <h2>Tracked Activities</h2>
+    </div>
+    <div class="col-xs-4 text-right">
+        <a routerLink="/createevent" class="btn btn-success btn-lg" style="text-decoration:none;"><i  class="fa fa-plus" aria-hidden="true">Add</i></a>
+    </div>
+           
+          
+         </div>
+          <div *ngIf="valid"> 
+            <div class="row alert alert-info" *ngIf="events?.length == 0">
+             No activities to track yet, why don't you <a routerLink="/createevent">create</a> one?
+            </div> 
+            <div  *ngIf="events?.length > 0"> 
+                <table class="table table-striped">
+                  <tbody *ngFor="let event of events">
+                       <tr>
+                        <td>  <a style="text-decoration:none;" [routerLink]="['/viewactivity']" [queryParams]="{ id:event._id,activity:event.activity }"><h3> {{event.activity}} </h3>   </a></td>
+                        <td> <input type="button" (click)="editlog(event)" value="Log" class="btn btn-danger btn-lg">    </td>
+                        <td><input type="button" (click)="viewoccurrence(event._id)" value="View Occurrences " class="btn btn-danger btn-lg">    </td>
+                       </tr>
+               <!--  <div *ngFor="let event of events"> -->
+                   
+           <!--      </div> -->
+                  </tbody>
+                  </table>
+            </div> 
+          </div>
+          <div *ngIf="!valid" class="alert alert-info">
+            No activities to track yet. Please <a routerLink="/signup">Register</a> or <a routerLink="/signin">Sign In</a> to create one.
+          </div>
+          
+          <form method="post">
+    
+        </form>
+
+      </div>        
+    </div>  
